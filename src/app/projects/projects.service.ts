@@ -6,7 +6,8 @@ import { PROJECTS} from './test-projects';
   providedIn: 'root'
 })
 export class ProjectsService {
-    projectsList: Project[];
+    // projectsList: Project[];
+    projectsList = PROJECTS;
     currentProject: Project;
   constructor() { }
 }

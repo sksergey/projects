@@ -9,7 +9,8 @@ export class UserService {
   private signinUrl: string;
   constructor() {
       this.isLoggedIn = false;
-      this.redirectUrl = '/projectslist';
+      // this.redirectUrl = '/projectslist';
+      this.redirectUrl = '';
       this.signinUrl = '/signin';
   }
   getIsLoggedIn(): boolean {
