@@ -9,6 +9,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { ProjectsListComponent } from './projects/projects-list/projects-list.component';
 import { KeywordsComponent } from './projects/keywords/keywords.component';
 
+import { DxButtonModule } from 'devextreme-angular';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,8 @@ import { KeywordsComponent } from './projects/keywords/keywords.component';
     BrowserModule,
       FormsModule,
       ReactiveFormsModule,
-      AppRoutingModule
+      AppRoutingModule,
+      DxButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

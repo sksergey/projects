@@ -3,7 +3,7 @@
   <div><span>id: </span>{{project.id}}</div>
   <div>
     <li *ngFor="let keyword of project.keywords">
-      <span class="badge">{{keyword}}</span>
+      <span>{{keyword}}</span>
     </li>
   </div>
   <button (click)="goBack()">go back</button>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
@@ -11,7 +11,7 @@ import { ProjectsService} from '../projects.service';
   styleUrls: ['./keywords.component.css']
 })
 export class KeywordsComponent implements OnInit {
-  @Input() project: Project;
+  project: Project;
   constructor(private route: ActivatedRoute, private projectService: ProjectsService, private location: Location) {
   }
 
