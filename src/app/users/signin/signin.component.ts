@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user';
 // import { FormControl, FormGroup } from '@angular/forms';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {UserService} from '../user.service';
 import { Router } from '@angular/router';
+
+import { User } from '../user';
+import {UserService} from '../user.service';
 
 @Component({
   selector: 'app-signin',
@@ -11,7 +12,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit {
-
     signinForm: FormGroup;
     user = new User();
     constructor(private fb: FormBuilder, private userService: UserService, private router: Router) {
@@ -20,8 +20,7 @@ export class SigninComponent implements OnInit {
     createForm() {
         this.signinForm = this.fb.group({
             email: [this.user.email, [Validators.email, Validators.required]],
-            password: [this.user.password, [Validators.minLength(4), Validators.required]],
-            // isLoggedIn: [this.userService.getIsLoggedIn()]
+            password: [this.user.password, [Validators.minLength(4), Validators.required]]
         });
     }
     onFormSubmit() {
@@ -32,22 +31,10 @@ export class SigninComponent implements OnInit {
             console.log('Redirect Url:' + url);
             this.router.navigate([ url ]);
               } else {
-                // this.userService.logout();
+                this.userService.logout();
                 alert('error');
+                this.createForm();
               }
-        // let uname = this.loginForm.get('username').value;
-        // let pwd = this.loginForm.get('password').value;
-        // this.authService.isUserAuthenticated(uname, pwd).subscribe(
-        //     authenticated => {
-        //         if(authenticated) {
-        //             let url =  this.authService.getRedirectUrl();
-        //             console.log('Redirect Url:'+ url);
-        //             this.router.navigate([ url ]);
-        //         } else {
-        //             this.invalidCredentialMsg = 'Invalid Credentials. Try again.';
-        //         }
-        //     }
-        // );
     }
   ngOnInit() {
   }

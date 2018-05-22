@@ -8,10 +8,9 @@ export class UserService {
   private redirectUrl: string;
   private signinUrl: string;
   constructor() {
-      this.isLoggedIn = false;
-      // this.redirectUrl = '/projectslist';
-      this.redirectUrl = '';
-      this.signinUrl = '/signin';
+      this.setIsLoggedIn(false);
+      this.setRedirectUrl('');
+      this.setSigninUrl('/signin');
   }
   getIsLoggedIn(): boolean {
     return this.isLoggedIn;
@@ -28,15 +27,13 @@ export class UserService {
   getSigninUrl(): string {
         return this.signinUrl;
   }
-  // login(isFormValid: boolean) {
-  //       if (isFormValid) {
-  //         this.isLoggedIn = true;
-  //       }
-  // }
+  setSigninUrl(url: string): void {
+        this.signinUrl = url;
+  }
   login() {
-        this.isLoggedIn = true;
+        this.setIsLoggedIn(true);
   }
   logout() {
-        this.isLoggedIn = false;
+        this.setIsLoggedIn(false);
   }
 }

@@ -1,17 +1,13 @@
 <h2>Signin</h2>
-
 <form [formGroup]="signinForm" (ngSubmit)="onFormSubmit()">
   <div class="form-group">
     <label class="center-block">email:
       <input class="form-control" formControlName="email">
-      <p>Form value: {{ signinForm.value | json }}</p>
-      <p>Form status: {{ signinForm.status | json }}</p>
-    </label>
+      </label>
     <label class="center-block">password:
       <input class="form-control" formControlName="password">
-      <p>Form value: {{ signinForm.value | json }}</p>
-      <p>Form status: {{ signinForm.status | json }}</p>
     </label>
     <button type="submit" class="btn btn-success">Signin</button>
   </div>
+  <p>status: {{ signinForm.status | json }}</p>
 </form>
